@@ -5,6 +5,7 @@ import org.joda.time.DateTime;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 
@@ -30,6 +31,7 @@ public class Contact implements Serializable {
         this.id = id;
     }
     @Column(name = "FIRST_NAME")
+    @Size(min = 3, max = 60,message = "{validation.firstname.Size.message}")
     public String getFirstName() {
         return firstName;
     }
@@ -38,6 +40,7 @@ public class Contact implements Serializable {
         this.firstName = firstName;
     }
     @Column(name = "LAST_NAME")
+    @Size(min = 3, max = 60,message = "{validation.lastname.Size.message}")
     public String getLastName() {
         return lastName;
     }

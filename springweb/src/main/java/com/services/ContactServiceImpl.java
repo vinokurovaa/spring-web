@@ -30,7 +30,7 @@ public class ContactServiceImpl implements ContactService {
 
     @Transactional(readOnly = true)
     public Contact save(Contact contact) {
-        return null;
+        return contactRepository.save(contact);
     }
 
     @Autowired
